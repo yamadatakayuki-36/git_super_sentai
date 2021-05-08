@@ -1,5 +1,5 @@
 class ProductsController < RankingController
-  
+  before_action :authenticate_user!, only: :search
   def index
     # products テーブルから最新順に作品を取得する
     @products = Product.all
@@ -13,5 +13,5 @@ class ProductsController < RankingController
   def search
     # 検索フォームをあいまいにする
     @products = Product.where('title LIKE(?)', "%#{params[:keyword]}%").limit(20)
-  end
+  end    
 end

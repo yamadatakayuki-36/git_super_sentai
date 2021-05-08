@@ -16,9 +16,11 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="label"><%= f.label :nickname %><br />
+    <%= f.text_field :nickname, placeholder: 'ニックネームを入力(必須)' %></div>
+    
+    <div class="field">
+    <%= f.file_field :image %>
   </div>
 
   <div class="actions">
